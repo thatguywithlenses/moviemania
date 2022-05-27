@@ -25,6 +25,9 @@ const Series = () => {
   useEffect(() => {
     window.scroll(0, 0);
     fetchSeries();
+    return () => {
+      setContent(""); // unmounting
+    };
     // eslint-disable-next-line
   }, [genreforURL, page]);
 
